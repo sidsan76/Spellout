@@ -1,0 +1,16 @@
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\bin\Debug\netcoreapp3.1\Spellout.Library.deps.json
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\bin\Debug\netcoreapp3.1\Spellout.Library.dll
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\bin\Debug\netcoreapp3.1\Spellout.Library.pdb
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.csprojAssemblyReference.cache
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.AssemblyInfoInputs.cache
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.AssemblyInfo.cs
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.dll
+C:\SCM Digital\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.pdb
+C:\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.csprojAssemblyReference.cache
+C:\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.AssemblyInfoInputs.cache
+C:\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.AssemblyInfo.cs
+C:\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.dll
+C:\Assignment\Spellout\Spellout.Library\obj\Debug\netcoreapp3.1\Spellout.Library.pdb
+C:\Assignment\Spellout\Spellout.Library\bin\Debug\netcoreapp3.1\Spellout.Library.deps.json
+C:\Assignment\Spellout\Spellout.Library\bin\Debug\netcoreapp3.1\Spellout.Library.dll
+C:\Assignment\Spellout\Spellout.Library\bin\Debug\netcoreapp3.1\Spellout.Library.pdb
