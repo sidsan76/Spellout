@@ -61,6 +61,27 @@ namespace Spellout.Library
             _positionNames.Add (18, "shankh");
         }
 
+        public bool Validate(string input)
+        {
+            if (input.Length > 19)
+                return false;
+
+            int result = 0;
+            bool isNumber = true;
+
+            if (input.Length > 9)
+            {
+                isNumber = int.TryParse (input.Substring(0, 9), out result) && 
+                int.TryParse (input.Substring(9, input.Length - 9), out result);
+            }
+            else
+            {
+                isNumber = int.TryParse (input.Substring(0, input.Length), out result);   
+            }
+
+            return isNumber;
+        }
+
         public string Convert(string input)
         {
             input = input.Trim();
@@ -111,11 +132,6 @@ namespace Spellout.Library
             }
 
             return spellNumber.Trim();
-        }
-
-        public bool Validate(string input)
-        {
-            throw new NotImplementedException();
         }
 
         private string SpellTwoDigitNumber(string digit)
