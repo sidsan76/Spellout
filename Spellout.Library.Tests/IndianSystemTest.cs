@@ -135,5 +135,14 @@ namespace Spellout.Library.Tests
             Assert.AreEqual ("one shankh eleven padma eleven nil eleven kharab eleven arab eleven crore eleven lac eleven thousand one hundred eleven", _testInstance.Convert("111111111111111111"));
             Assert.AreEqual ("ten shankh", _testInstance.Convert("1000000000000000000"));
         }
+
+        [TestMethod]
+        public void TestValidateNumber()
+        {
+            Assert.AreEqual (false, _testInstance.Validate("1000000000000000ao"));
+            Assert.AreEqual (true, _testInstance.Validate("1000000000000000000"));
+            Assert.AreEqual (false, _testInstance.Validate("10000000000000000000"));
+            Assert.AreEqual (true, _testInstance.Validate("1234567890"));
+        }
     }
 }
