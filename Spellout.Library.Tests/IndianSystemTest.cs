@@ -101,9 +101,32 @@ namespace Spellout.Library.Tests
         [TestMethod]
         public void TestKharab()
         {
-            Assert.AreEqual ("one kharab", _testInstance.Convert("1000000000"));
-            Assert.AreEqual ("ten kharab", _testInstance.Convert("10000000000"));
-        }          
+            Assert.AreEqual ("one kharab", _testInstance.Convert("100000000000"));
+            Assert.AreEqual ("ten kharab", _testInstance.Convert("1000000000000"));
+        }
 
+        // Tests string interpretations at nil place
+        [TestMethod]
+        public void TestNil()
+        {
+            Assert.AreEqual ("one nil", _testInstance.Convert("10000000000000"));
+            Assert.AreEqual ("ten nil", _testInstance.Convert("100000000000000"));
+        }
+
+        // Tests string interpretations at padma place
+        [TestMethod]
+        public void TestPadma()
+        {
+            Assert.AreEqual ("one padma", _testInstance.Convert("1000000000000000"));
+            Assert.AreEqual ("ten padma", _testInstance.Convert("10000000000000000"));
+        } 
+
+        // Tests string interpretations at shankh place
+        [TestMethod]
+        public void TestShankh()
+        {
+            Assert.AreEqual ("one shankh", _testInstance.Convert("100000000000000000"));
+            Assert.AreEqual ("ten shankh", _testInstance.Convert("1000000000000000000"));
+        }
     }
 }
