@@ -79,7 +79,31 @@ namespace Spellout.Library.Tests
         {
             Assert.AreEqual ("one lac", _testInstance.Convert("100000"));
             Assert.AreEqual ("ten lac", _testInstance.Convert("1000000"));
-        }        
+        }
+
+        // Tests string interpretations at crore place
+        [TestMethod]
+        public void TestCrore()
+        {
+            Assert.AreEqual ("one crore", _testInstance.Convert("10000000"));
+            Assert.AreEqual ("ten crore", _testInstance.Convert("100000000"));
+        }          
+
+        // Tests string interpretations at arab place
+        [TestMethod]
+        public void TestArab()
+        {
+            Assert.AreEqual ("one arab", _testInstance.Convert("1000000000"));
+            Assert.AreEqual ("ten arab", _testInstance.Convert("10000000000"));
+        }
+
+        // Tests string interpretations at kharab place
+        [TestMethod]
+        public void TestKharab()
+        {
+            Assert.AreEqual ("one kharab", _testInstance.Convert("1000000000"));
+            Assert.AreEqual ("ten kharab", _testInstance.Convert("10000000000"));
+        }          
 
     }
 }
