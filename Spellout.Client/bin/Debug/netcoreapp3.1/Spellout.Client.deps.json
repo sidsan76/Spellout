@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Spellout.Client/1.0.0": {
+        "dependencies": {
+          "Spellout.Library": "1.0.0"
+        },
+        "runtime": {
+          "Spellout.Client.dll": {}
+        }
+      },
+      "Spellout.Library/1.0.0": {
+        "runtime": {
+          "Spellout.Library.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Spellout.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Spellout.Library/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

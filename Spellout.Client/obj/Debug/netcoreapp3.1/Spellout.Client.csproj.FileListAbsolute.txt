@@ -1,0 +1,14 @@
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Client.exe
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Client.deps.json
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Client.runtimeconfig.json
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Client.runtimeconfig.dev.json
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Client.dll
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Client.pdb
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Library.dll
+C:\Assignment\Spellout\Spellout.Client\bin\Debug\netcoreapp3.1\Spellout.Library.pdb
+C:\Assignment\Spellout\Spellout.Client\obj\Debug\netcoreapp3.1\Spellout.Client.csprojAssemblyReference.cache
+C:\Assignment\Spellout\Spellout.Client\obj\Debug\netcoreapp3.1\Spellout.Client.AssemblyInfoInputs.cache
+C:\Assignment\Spellout\Spellout.Client\obj\Debug\netcoreapp3.1\Spellout.Client.AssemblyInfo.cs
+C:\Assignment\Spellout\Spellout.Client\obj\Debug\netcoreapp3.1\Spellout.Client.csproj.CopyComplete
+C:\Assignment\Spellout\Spellout.Client\obj\Debug\netcoreapp3.1\Spellout.Client.dll
+C:\Assignment\Spellout\Spellout.Client\obj\Debug\netcoreapp3.1\Spellout.Client.pdb
