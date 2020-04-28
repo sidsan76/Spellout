@@ -61,8 +61,11 @@ namespace Spellout.Library.Tests
         public void TestHundred()
         {
             Assert.AreEqual ("one hundred", _testInstance.Convert("100"));
-            Assert.AreEqual ("one thousand", _testInstance.Convert("1000"));
-            Assert.AreEqual ("one hundred", _testInstance.Convert("100"));
+            Assert.AreEqual ("two hundred", _testInstance.Convert("200"));
+            Assert.AreEqual ("nine hundred", _testInstance.Convert("900"));
+
+            Assert.AreEqual ("one hundred eleven", _testInstance.Convert("111"));
+            Assert.AreEqual ("seven hundred fifty three", _testInstance.Convert("753"));
         }
 
         // Tests string interpretations at thousands place
@@ -70,13 +73,16 @@ namespace Spellout.Library.Tests
         public void TestThousand()
         {
             Assert.AreEqual ("one thousand", _testInstance.Convert("1000"));
+            Assert.AreEqual ("one thousand one hundred eleven", _testInstance.Convert("1111"));
             Assert.AreEqual ("ten thousand", _testInstance.Convert("10000"));
+            Assert.AreEqual ("eleven thousand one hundred eleven", _testInstance.Convert("11111"));
         }
 
         // Tests string interpretations at lac place
         [TestMethod]
         public void TestLac()
         {
+            Assert.AreEqual ("ten lac eleven thousand one hundred eleven", _testInstance.Convert("1011111"));
             Assert.AreEqual ("one lac", _testInstance.Convert("100000"));
             Assert.AreEqual ("ten lac", _testInstance.Convert("1000000"));
         }
@@ -126,6 +132,7 @@ namespace Spellout.Library.Tests
         public void TestShankh()
         {
             Assert.AreEqual ("one shankh", _testInstance.Convert("100000000000000000"));
+            Assert.AreEqual ("one shankh eleven padma eleven nil eleven kharab eleven arab eleven crore eleven lac eleven thousand one hundred eleven", _testInstance.Convert("111111111111111111"));
             Assert.AreEqual ("ten shankh", _testInstance.Convert("1000000000000000000"));
         }
     }

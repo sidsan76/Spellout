@@ -44,49 +44,73 @@ namespace Spellout.Library
 
             _positionNames.Add (2, "hundred");
             _positionNames.Add (3, "thousand");
-            _positionNames.Add (4, "lac");
-            _positionNames.Add (5, "crore");
-            _positionNames.Add (6, "arab");
-            _positionNames.Add (7, "kharab");
-            _positionNames.Add (8, "nil");
-            _positionNames.Add (9, "padma");
-            _positionNames.Add (10, "shankh");
+            _positionNames.Add (4, "thousand");
+            _positionNames.Add (5, "lac");
+            _positionNames.Add (6, "lac");
+            _positionNames.Add (7, "crore");
+            _positionNames.Add (8, "crore");
+            _positionNames.Add (9, "arab");
+            _positionNames.Add (10, "arab");
+            _positionNames.Add (11, "kharab");
+            _positionNames.Add (12, "kharab");
+            _positionNames.Add (13, "nil");
+            _positionNames.Add (14, "nil");
+            _positionNames.Add (15, "padma");
+            _positionNames.Add (16, "padma");
+            _positionNames.Add (17, "shankh");
+            _positionNames.Add (18, "shankh");
         }
 
         public string Convert(string input)
         {
             input = input.Trim();
+            if (input == "0")
+            {
+                return "zero";
+            }
+
             string spellNumber = string.Empty;
 
             if (input.Length > 3)
             {
-                spellNumber = SpellThreeDigitNumber(input);
-                for (int i=input.Length - 3; i <= 0; i = i-2)
+                spellNumber = SpellThreeDigitNumber(input.Substring(input.Length - 3, 3));
+                for (int i=input.Length - 3; i > 0; i = i-2)
                 {
                     if (i < 1)
                     {
                         break;
                     }
+
+                    string twoDigitNum = string.Empty;
                     if (i == 1)
                     {
-                        spellNumber = SpellTwoDigitNumber(input.Substring(0, 1))
-                            + " " 
-                            + (string) _positionNames[i + 2] 
-                            + " " + spellNumber;
+                        twoDigitNum = SpellTwoDigitNumber(input.Substring(0, 1));
                     }
                     else
                     {
-                        spellNumber = SpellTwoDigitNumber(input.Substring(i -2, 2));
+                        twoDigitNum = SpellTwoDigitNumber(input.Substring(i -2, 2));
+                    }
+
+                    if (!string.IsNullOrEmpty(twoDigitNum.Trim()))
+                    {
+                        spellNumber = twoDigitNum
+                            + " " 
+                            + (string) _positionNames[input.Length - i] 
+                            + " " + spellNumber;                            
                     }
 
                 }
             }
-            else
+            else if (input.Length == 3)
             {
                 spellNumber = SpellThreeDigitNumber(input);
             }
+            else
+            {
+                spellNumber = SpellTwoDigitNumber(input);
+            }
 
-            return spellNumber;
+            return spellNumber.Trim();
         }
 
         public bool Validate(string input)
@@ -96,15 +120,18 @@ namespace Spellout.Library
 
         private string SpellTwoDigitNumber(string digit)
         {
+            if (digit == "0" || digit == "00")
+                return string.Empty;
+
             if (_numberNames.ContainsKey(digit))
             {
                 return (string)_numberNames[digit];
             }
             else
             {
-                return (string)_numberNames[digit.Substring(0, 1) + "0"] 
+                return ((string)_numberNames[digit.Substring(0, 1) + "0"] 
                         + " "
-                        + (string)_numberNames[digit.Substring(1, 1)];
+                        + (digit.Length > 1 ? (string)_numberNames[digit.Substring(1, 1)] : string.Empty)).Trim();
             }
             
         }
@@ -113,8 +140,8 @@ namespace Spellout.Library
         private string SpellThreeDigitNumber(string digit)
         {
             string twoDigitNumber = SpellTwoDigitNumber(digit.Substring(1, 2));
-            return ((string)_numberNames[digit.Substring(0, 1)] 
-                                + " " + (string) _positionNames[2]
+            return ( (digit.Substring(0, 1) =="0" ? string.Empty : 
+                        (string)_numberNames[digit.Substring(0, 1)] + " " + (string) _positionNames[2]) 
                                 + " " + twoDigitNumber);
         }
     }
