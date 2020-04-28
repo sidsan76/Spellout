@@ -14,33 +14,33 @@ namespace Spellout.Library
         public IndianSystem()
         {
             _numberNames.Add ("1", "one");
-            _numberNames.Add ("2", "one");
-            _numberNames.Add ("3", "one");
-            _numberNames.Add ("4", "one");
-            _numberNames.Add ("5", "one");
-            _numberNames.Add ("6", "one");
-            _numberNames.Add ("7", "one");
-            _numberNames.Add ("8", "one");
-            _numberNames.Add ("9", "one");
-            _numberNames.Add ("10", "one");
-            _numberNames.Add ("11", "one");
-            _numberNames.Add ("12", "one");
-            _numberNames.Add ("13", "one");
-            _numberNames.Add ("14", "one");
-            _numberNames.Add ("15", "one");
-            _numberNames.Add ("16", "one");
-            _numberNames.Add ("17", "one");
-            _numberNames.Add ("18", "one");
-            _numberNames.Add ("19", "one");
+            _numberNames.Add ("2", "two");
+            _numberNames.Add ("3", "three");
+            _numberNames.Add ("4", "four");
+            _numberNames.Add ("5", "five");
+            _numberNames.Add ("6", "six");
+            _numberNames.Add ("7", "seven");
+            _numberNames.Add ("8", "eight");
+            _numberNames.Add ("9", "nine");
+            _numberNames.Add ("10", "ten");
+            _numberNames.Add ("11", "eleven");
+            _numberNames.Add ("12", "twelve");
+            _numberNames.Add ("13", "thirteen");
+            _numberNames.Add ("14", "fourteen");
+            _numberNames.Add ("15", "fifteen");
+            _numberNames.Add ("16", "sixteen");
+            _numberNames.Add ("17", "seventeen");
+            _numberNames.Add ("18", "eighteen");
+            _numberNames.Add ("19", "ninteen");
             
-            _numberNames.Add ("20", "one");
-            _numberNames.Add ("30", "one");
-            _numberNames.Add ("40", "one");
-            _numberNames.Add ("50", "one");
-            _numberNames.Add ("60", "one");
-            _numberNames.Add ("70", "one");
-            _numberNames.Add ("80", "one");
-            _numberNames.Add ("90", "one");         
+            _numberNames.Add ("20", "twenty");
+            _numberNames.Add ("30", "thirty");
+            _numberNames.Add ("40", "fourty");
+            _numberNames.Add ("50", "fifty");
+            _numberNames.Add ("60", "sixty");
+            _numberNames.Add ("70", "seventy");
+            _numberNames.Add ("80", "eighty");
+            _numberNames.Add ("90", "ninty");         
 
             _positionNames.Add (2, "hundred");
             _positionNames.Add (3, "thousand");
@@ -56,16 +56,37 @@ namespace Spellout.Library
         public string Convert(string input)
         {
             input = input.Trim();
+            string spellNumber = string.Empty;
 
             if (input.Length > 3)
             {
-                for (int i=input.Length - 1; i <= 0; i--)
+                spellNumber = SpellThreeDigitNumber(input);
+                for (int i=input.Length - 3; i <= 0; i = i-2)
                 {
-                    string digit = input.Substring(i, 1);
+                    if (i < 1)
+                    {
+                        break;
+                    }
+                    if (i == 1)
+                    {
+                        spellNumber = SpellTwoDigitNumber(input.Substring(0, 1))
+                            + " " 
+                            + (string) _positionNames[i + 2] 
+                            + " " + spellNumber;
+                    }
+                    else
+                    {
+                        spellNumber = SpellTwoDigitNumber(input.Substring(i -2, 2));
+                    }
+
                 }
             }
+            else
+            {
+                spellNumber = SpellThreeDigitNumber(input);
+            }
 
-            return null;
+            return spellNumber;
         }
 
         public bool Validate(string input)
@@ -75,7 +96,26 @@ namespace Spellout.Library
 
         private string SpellTwoDigitNumber(string digit)
         {
-            return null;
+            if (_numberNames.ContainsKey(digit))
+            {
+                return (string)_numberNames[digit];
+            }
+            else
+            {
+                return (string)_numberNames[digit.Substring(0, 1) + "0"] 
+                        + " "
+                        + (string)_numberNames[digit.Substring(1, 1)];
+            }
+            
+        }
+
+        
+        private string SpellThreeDigitNumber(string digit)
+        {
+            string twoDigitNumber = SpellTwoDigitNumber(digit.Substring(1, 2));
+            return ((string)_numberNames[digit.Substring(0, 1)] 
+                                + " " + (string) _positionNames[2]
+                                + " " + twoDigitNumber);
         }
     }
 }
