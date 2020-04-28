@@ -55,5 +55,31 @@ namespace Spellout.Library.Tests
             Assert.AreEqual ("eighty", _testInstance.Convert("80"));
             Assert.AreEqual ("ninty", _testInstance.Convert("90"));
         }
+
+         // Tests string interpretations at hundreds place
+        [TestMethod]
+        public void TestHundred()
+        {
+            Assert.AreEqual ("one hundred", _testInstance.Convert("100"));
+            Assert.AreEqual ("one thousand", _testInstance.Convert("1000"));
+            Assert.AreEqual ("one hundred", _testInstance.Convert("100"));
+        }
+
+        // Tests string interpretations at thousands place
+        [TestMethod]
+        public void TestThousand()
+        {
+            Assert.AreEqual ("one thousand", _testInstance.Convert("1000"));
+            Assert.AreEqual ("ten thousand", _testInstance.Convert("10000"));
+        }
+
+        // Tests string interpretations at lac place
+        [TestMethod]
+        public void TestLac()
+        {
+            Assert.AreEqual ("one lac", _testInstance.Convert("100000"));
+            Assert.AreEqual ("ten lac", _testInstance.Convert("1000000"));
+        }        
+
     }
 }
